@@ -1,0 +1,63 @@
+
+INSERT INTO Usuarios (Nome, SobreNome, Email, Sexo, DataNascimento, Senha)
+VALUES 
+    ('João', 'Silva', 'joao.silva@gmail.com', 'M', '1992-05-15', 'senha123'),
+    ('Maria', 'Oliveira', 'maria.oliveira@hotmail.com', 'F', '1995-08-20', 'senha456'),
+    ('Peter', 'Smith', 'peter.smith@gmail.com', 'M', '1990-11-30', 'password789'),
+    ('Anna', 'Johnson', 'anna.johnson@hotmail.com', 'F', '2000-02-10', 'password101'),
+    ('Lucas', 'Almeida', 'lucas.almeida@gmail.com', 'M', '1998-12-05', 'senha112'),
+    ('Fernanda', 'Lima', 'fernanda.lima@hotmail.com', 'F', '2003-03-18', 'senha131'),
+    ('Carlos', 'Pereira', 'carlos.pereira@gmail.com', 'M', '1991-07-22', 'senha415'),
+    ('Juliana', 'Souza', 'juliana.souza@hotmail.com', 'F', '1994-09-25', 'senha161'),
+    ('Robert', 'Brown', 'robert.brown@gmail.com', 'M', '2005-01-01', 'password718'),
+    ('Patrícia', 'Rocha', 'patricia.rocha@hotmail.com', 'F', '1996-06-14', 'senha192');
+
+INSERT INTO Categorias (Nome, Descricao)
+VALUES 
+    ('Smartphones', 'Dispositivos móveis com capacidade de processamento avançado e conectividade à internet.'),
+    ('Laptops', 'Computadores portáteis para uso em trabalho e lazer.'),
+    ('Tablets', 'Dispositivos móveis com tela sensível ao toque, intermediários entre smartphones e laptops.'),
+    ('Acessórios', 'Produtos que complementam e melhoram a experiência de uso de dispositivos eletrônicos.'),
+    ('Televisores', 'Appliances que exibem vídeos e imagens, disponíveis em várias tecnologias.');
+
+INSERT INTO Produtos (Nome, Descricao, Preco, QuantidadeEstoque, CategoriaID)
+VALUES 
+    ('iPhone 13', 'Smartphone da Apple com câmera de alta qualidade.', 5999.99, 50, 1),
+    ('Samsung Galaxy S21', 'Smartphone da Samsung com tela AMOLED.', 4999.99, 30, 1),
+    ('Dell XPS 13', 'Laptop ultrafino com desempenho excepcional.', 8999.99, 20, 2),
+    ('MacBook Pro 16', 'Laptop da Apple com performance de alto nível.', 13999.99, 15, 2),
+    ('iPad Air', 'Tablet da Apple com tela Retina e chip potente.', 4499.99, 25, 3),
+    ('Samsung Galaxy Tab', 'Tablet Android com excelente qualidade de imagem.', 2999.99, 30, 3),
+    ('Fones de Ouvido Bluetooth', 'Acessório sem fio com qualidade de som premium.', 399.99, 100, 4),
+    ('Carregador Portátil', 'Bateria externa para carregar dispositivos móveis.', 199.99, 75, 4),
+    ('Smart TV LG 55"', 'Televisor com resolução 4K e smart features.', 3499.99, 40, 5),
+    ('Samsung QLED 65"', 'Televisor com tecnologia QLED para cores vibrantes.', 5999.99, 20, 5);
+
+
+INSERT INTO Pedidos (UsuarioID, Total, Status)
+VALUES 
+    (1, 6599.98, 'Confirmado'),  -- Pedido de João Silva
+    (2, 4999.99, 'Confirmado'),  -- Pedido de Maria Oliveira
+    (3, 8999.99, 'Enviado'),      -- Pedido de Peter Smith
+    (4, 4499.99, 'Confirmado'),   -- Pedido de Anna Johnson
+    (5, 6299.98, 'Cancelado'),     -- Pedido de Lucas Almeida
+    (6, 399.99, 'Confirmado'),     -- Pedido de Fernanda Lima
+    (7, 3499.99, 'Enviado'),       -- Pedido de Carlos Pereira
+    (8, 5999.99, 'Confirmado'),    -- Pedido de Juliana Souza
+    (9, 5999.99, 'Entregue'),      -- Pedido de Robert Brown
+    (10, 499.99, 'Confirmado');     -- Pedido de Patrícia Rocha
+
+
+INSERT INTO ItensPedido (PedidoID, ProdutoID, Quantidade, PrecoUnitario)
+VALUES 
+    (1, 1, 1, 5999.99),  -- João Silva compra 1 iPhone 13
+    (1, 4, 1, 399.99),   -- João Silva compra 1 Fones de Ouvido Bluetooth
+    (2, 2, 1, 4999.99),  -- Maria Oliveira compra 1 Samsung Galaxy S21
+    (3, 3, 1, 8999.99),  -- Peter Smith compra 1 Dell XPS 13
+    (4, 5, 1, 4499.99),  -- Anna Johnson compra 1 iPad Air
+    (5, 2, 1, 4999.99),  -- Lucas Almeida compra 1 Samsung Galaxy S21
+    (6, 6, 1, 2999.99),  -- Fernanda Lima compra 1 Samsung Galaxy Tab
+    (7, 8, 1, 199.99),   -- Carlos Pereira compra 1 Carregador Portátil
+    (8, 9, 1, 3499.99),  -- Juliana Souza compra 1 Smart TV LG 55"
+    (9, 10, 1, 5999.99);  -- Robert Brown compra 1 Samsung QLED 65"
+
